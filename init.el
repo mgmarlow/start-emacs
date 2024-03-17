@@ -102,6 +102,7 @@
   (completion-category-overrides '((file (styles basic partial-completion)))))
 
 (use-package corfu
+  :ensure t
   ;; Recommended: Enable Corfu globally.  This is recommended since Dabbrev can
   ;; be used globally (M-/).  See also the customization variable
   ;; `global-corfu-modes' to exclude certain modes.
@@ -117,8 +118,7 @@
   (global-treesit-auto-mode))
 
 (use-package eglot
-  :hooks
-  (rust-ts-mode . eglot-ensure))
+  :hook ((rust-ts-mode . eglot-ensure)))
 
 ;;; Custom lisp:
 

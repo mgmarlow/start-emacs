@@ -41,16 +41,16 @@ Defaults to once a week."
   :group 'package)
 
 (define-advice package-install (:before (&rest _) my--package-refresh-contents-maybe)
-  (when (or (null package-last-refresh-date)
+  (when (or (null my-package-last-refresh-date)
             (> (/ (float-time
                    (time-subtract (date-to-time (format-time-string "%Y-%m-%dT%H:%M"))
-                                  (date-to-time package-last-refresh-date)))
+                                  (date-to-time my-package-last-refresh-date)))
                   3600)
-               package-automatic-refresh-threshold))
+               my-package-automatic-refresh-threshold))
     (package-refresh-contents)))
 
 (define-advice package-refresh-contents (:after (&rest _) my--update-package-refresh-date)
-  (customize-save-variable 'package-last-refresh-date
+  (customize-save-variable 'my-package-last-refresh-date
                            (format-time-string "%Y-%m-%dT%H:%M")))
 
 (provide 'my-package-refresh)
