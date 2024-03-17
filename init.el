@@ -226,14 +226,12 @@
 ;; must have the language server installed for a particular language
 ;; (e.g. rust-analyzer for Rust) before `eglot' will work its magic.
 (use-package eglot
-  :bind (("C-c ." . eglot-code-action-quickfix))
-  :hook (
-         ;; Uncomment these dotted pairs to automatically activate
-         ;; Eglot when that major mode is active.
-
-         ;; (rust-ts-mode . eglot-ensure)
-         ;; (go-ts-mode . eglot-ensure)
-         ))
+  ;; Uncomment these dotted pairs to automatically activate Eglot when
+  ;; that major mode is active.
+  ;;
+  ;; :hook ((rust-ts-mode . eglot-ensure)
+  ;;        (go-ts-mode . eglot-ensure))
+  :bind (("C-c ." . eglot-code-action-quickfix)))
 
 ;;; Custom lisp modules:
 
