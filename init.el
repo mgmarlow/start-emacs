@@ -51,6 +51,10 @@
 
 ;;; Packages:
 
+(use-package repeat
+  :config
+  (repeat-mode))
+
 (use-package uniquify
   :config
   (setq uniquify-buffer-name-style 'forward))
