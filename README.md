@@ -38,9 +38,15 @@ initialized.
 
 ## Why Start Emacs?
 
-Start Emacs is not an Emacs distribution, but a lightweight kickstart
-project so you can quickly get up and running with your own
-configuration.
+Start Emacs is a set of default settings and recommended packages
+paired with some extensive documentation to help new Emacs users get
+started with their own configuration. The goal is simplicity and
+readability while providing a strong first-time user experience.
+
+In contrast to distributions like
+[Doom](https://github.com/doomemacs/doomemacs), Start Emacs is
+primarily motivated to help new users learn how to configure Emacs
+themselves.
 
 ## Next steps
 
