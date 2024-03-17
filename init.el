@@ -4,7 +4,7 @@
 
 ;;; Code:
 
-(defun se--configure-fonts ()
+(defun my--configure-fonts ()
   "Configure your default font family and size."
   (let ((base "Hack 11"))
     (custom-set-faces
@@ -12,7 +12,7 @@
      `(fixed-pitch ((t :inherit (default))))
      `(default ((t :inherit (default)))))))
 
-(add-hook 'emacs-startup-hook #'se--configure-fonts)
+(add-hook 'emacs-startup-hook #'my--configure-fonts)
 
 (setq tab-always-indent 'complete
       inhibit-startup-screen t
@@ -38,10 +38,8 @@
 ;; Display line numbers in programming language modes.
 (add-hook 'prog-mode-hook #'display-line-numbers-mode)
 
-(savehist-mode t)
-
-(require 'uniquify)
-(setq uniquify-buffer-name-style 'forward)
+;; Respect color escape sequences
+(add-hook 'compilation-filter-hook #'ansi-color-compilation-filter)
 
 ;; Initialize package.el for loading third-party packages.
 (require 'package)
@@ -50,6 +48,12 @@
 
 (unless package-archive-contents
   (package-refresh-contents))
+
+;;; Packages:
+
+(use-package uniquify
+  :config
+  (setq uniquify-buffer-name-style 'forward))
 
 (use-package ef-themes
   :ensure t
@@ -62,8 +66,66 @@
   :config
   (exec-path-from-shell-initialize))
 
-;; Respect color escape sequences
-(add-hook 'compilation-filter-hook #'ansi-color-compilation-filter)
+(use-package vertico
+  :ensure t
+  :init
+  (vertico-mode)
+  ;; Optionally enable cycling for `vertico-next' and `vertico-previous'.
+  (setq vertico-cycle t))
 
+;; Persist history over Emacs restarts. Vertico sorts by history position.
+(use-package savehist
+  :init
+  (savehist-mode))
+
+;; Enable rich annotations using the Marginalia package
+(use-package marginalia
+  :ensure t
+  ;; Bind `marginalia-cycle' locally in the minibuffer.  To make the binding
+  ;; available in the *Completions* buffer, add it to the
+  ;; `completion-list-mode-map'.
+  :bind (:map minibuffer-local-map
+         ("M-A" . marginalia-cycle))
+
+  ;; The :init section is always executed.
+  :init
+
+  ;; Marginalia must be activated in the :init section of use-package such that
+  ;; the mode gets enabled right away. Note that this forces loading the
+  ;; package.
+  (marginalia-mode))
+
+(use-package orderless
+  :ensure t
+  :custom
+  (completion-styles '(orderless basic))
+  (completion-category-overrides '((file (styles basic partial-completion)))))
+
+(use-package corfu
+  ;; Recommended: Enable Corfu globally.  This is recommended since Dabbrev can
+  ;; be used globally (M-/).  See also the customization variable
+  ;; `global-corfu-modes' to exclude certain modes.
+  :init
+  (global-corfu-mode))
+
+(use-package treesit-auto
+  :ensure t
+  :custom
+  (treesit-auto-install 'prompt)
+  :config
+  (treesit-auto-add-to-auto-mode-alist 'all)
+  (global-treesit-auto-mode))
+
+(use-package eglot
+  :hooks
+  (rust-ts-mode . eglot-ensure))
+
+;;; Custom lisp:
+
+(add-to-list 'load-path (expand-file-name "lisp" user-emacs-directory))
+
+(use-package my-package-refresh
+  :config
+  (setq my-package-automatic-refresh-threshold (* 7 24)))
 
 ;;; init.el ends here
