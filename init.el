@@ -4,15 +4,18 @@
 
 ;;; Code:
 
-(defun my--configure-fonts ()
-  "Configure your default font family and size."
-  (let ((base "Hack 11"))
-    (custom-set-faces
-     `(default ((t :font ,base)))
-     `(fixed-pitch ((t :inherit (default))))
-     `(default ((t :inherit (default)))))))
+;; TODO: Un-comment the following code and swap "Hack 12" with your
+;; preferred font family and size.
 
-(add-hook 'emacs-startup-hook #'my--configure-fonts)
+;; (defun my--configure-fonts ()
+;;   "Configure your default font family and size."
+;;   (let ((base "Hack 12"))
+;;     (custom-set-faces
+;;      `(default ((t :font ,base)))
+;;      `(fixed-pitch ((t :inherit (default))))
+;;      `(default ((t :inherit (default)))))))
+;;
+;; (add-hook 'emacs-startup-hook #'my--configure-fonts)
 
 (setq tab-always-indent 'complete
       inhibit-startup-screen t
@@ -85,8 +88,8 @@
 ;; Enable rich annotations using the Marginalia package
 (use-package marginalia
   :ensure t
-  ;; Bind `marginalia-cycle' locally in the minibuffer.  To make the binding
-  ;; available in the *Completions* buffer, add it to the
+  ;; Bind `marginalia-cycle' locally in the minibuffer. To make the
+  ;; binding available in the *Completions* buffer, add it to the
   ;; `completion-list-mode-map'.
   :bind (:map minibuffer-local-map
          ("M-A" . marginalia-cycle))
@@ -94,9 +97,9 @@
   ;; The :init section is always executed.
   :init
 
-  ;; Marginalia must be activated in the :init section of use-package such that
-  ;; the mode gets enabled right away. Note that this forces loading the
-  ;; package.
+  ;; Marginalia must be activated in the :init section of use-package
+  ;; such that the mode gets enabled right away. Note that this forces
+  ;; loading the package.
   (marginalia-mode))
 
 (use-package orderless
@@ -107,11 +110,18 @@
 
 (use-package corfu
   :ensure t
-  ;; Recommended: Enable Corfu globally.  This is recommended since Dabbrev can
-  ;; be used globally (M-/).  See also the customization variable
-  ;; `global-corfu-modes' to exclude certain modes.
+  ;; Recommended: Enable Corfu globally. This is recommended since
+  ;; Dabbrev can be used globally (M-/). See also the customization
+  ;; variable `global-corfu-modes' to exclude certain modes.
   :init
-  (global-corfu-mode))
+  (global-corfu-mode)
+  :custom
+  (corfu-auto t)
+  ;; You might want to configure these variables to suit your
+  ;; preferences. It's recommended to have some amount of delay if you
+  ;; use Corfu with Eglot, otherwise editing performance could suffer.
+  (corfu-auto-delay 0.25)
+  (corfu-auto-prefix 2))
 
 (use-package treesit-auto
   :ensure t
@@ -122,7 +132,16 @@
   (global-treesit-auto-mode))
 
 (use-package eglot
-  :hook ((rust-ts-mode . eglot-ensure)))
+  :bind (("C-c ." . eglot-code-action-quickfix))
+  :hook (
+         ;; Uncomment these dotted pairs to automatically activate
+         ;; Eglot when that major mode is active. Note that you must
+         ;; have the language server installed (e.g. rust-analyzer for
+         ;; Rust) before Eglot can do its magic.
+
+         ;; (rust-ts-mode . eglot-ensure)
+         ;; (go-ts-mode . eglot-ensure)
+         ))
 
 ;;; Custom lisp:
 
