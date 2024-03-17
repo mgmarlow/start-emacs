@@ -24,7 +24,7 @@ git clone https://github.com/mgmarlow/start-emacs.git "${XDG_CONFIG_HOME:-$HOME/
 
 **Windows (Powershell)**:
 
-```ps1
+```
 git clone https://github.com/mgmarlow/start-emacs.git $env:USERPROFILE\AppData\Roaming\.emacs.d\
 ```
 
