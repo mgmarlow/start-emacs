@@ -2,6 +2,20 @@
 
 Some suggested recipes for extending Start Emacs.
 
+## Git UI
+
+[Magit](https://magit.vc/) is an absolute legend when it comes to Git
+user interfaces. It's also incredibly easy to setup:
+
+```elisp
+(use-package magit
+  :ensure t
+  :bind ("C-c g" . magit-status))
+```
+
+You can start it by navigating to a buffer inside of a Git repository
+and using `C-c g`.
+
 ## Vim emulation
 
 [Evil mode](https://github.com/emacs-evil/evil) is the de facto Vim
