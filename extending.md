@@ -48,7 +48,7 @@ add [evil-escape](https://github.com/syl20bnr/evil-escape):
   (setq evil-escape-key-sequence "jj")
   (setq evil-escape-delay 0.2)
   ;; Prevent "jj" from escaping any mode other than insert-mode.
-  (setq 'evil-escape-inhibit-functions
+  (setq evil-escape-inhibit-functions
         (list (lambda () (not (evil-insert-state-p)))))
   (evil-escape-mode))
 ```
