@@ -233,6 +233,12 @@
   ;;        (go-ts-mode . eglot-ensure))
   :bind (("C-c ." . eglot-code-action-quickfix)))
 
+;; Add breadcrumbs to the top of buffers.
+(use-package breadcrumb
+  :ensure t
+  :config
+  (breadcrumb-mode))
+
 ;;; Custom lisp modules:
 
 ;; Add `./lisp/' to the Emacs `load-path' so Emacs can find your
