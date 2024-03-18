@@ -45,8 +45,25 @@ readability while providing a strong first-time user experience.
 
 In contrast to distributions like
 [Doom](https://github.com/doomemacs/doomemacs), Start Emacs is
-primarily motivated to help new users learn how to configure Emacs
-themselves.
+primarily motivated with helping new users learn how to configure
+Emacs themselves.
+
+### Tree-sitter
+
+[Tree-sitter](https://tree-sitter.github.io/tree-sitter/) is a fancy
+tool that parses source code into syntax trees that are used for
+syntax highlighting (as opposed to using regular expressions, like
+classic Emacs modes). Start Emacs prioritizes tree-sitter major modes,
+preferring them over their non-tree-sitter counterparts.
+
+Although Emacs 29 ships with the tools necessary for enabling
+tree-sitter, it does not bundle the programming language grammars
+actually used for parsing. Those grammars must be installed
+separately. To work around this, Start Emacs uses a great little
+library, [treesit-auto](https://github.com/renzmann/treesit-auto),
+that prompts you to install a grammar if one is available for your
+current buffer. This will kick in automatically for any programming
+language that treesit-auto recognizes.
 
 ## Next steps
 
