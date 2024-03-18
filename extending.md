@@ -65,3 +65,24 @@ Mode](https://orgmode.org/).
   :config
   (setq denote-directory "~/path/to/notes/"))
 ```
+
+## Common Lisp editing
+
+Many people start using Emacs because they're interested in learning
+Common Lisp. I recommend installing [SBCL](https://www.sbcl.org/) and
+working through Peter Siebel's _[Practical Common
+Lisp](https://gigamonkeys.com/book/)_.
+
+You can configure a Common Lisp REPL with
+[Sly](https://github.com/joaotavora/sly). The only configuration
+necessary is telling Sly where to find your Lisp interpreter:
+
+```elisp
+(use-package sly
+  :ensure t
+  :custom
+  (inferior-lisp-program "/path/to/sbcl"))
+```
+
+You might also take a look at [Paredit](https://paredit.org/) to help
+make working with parentheses more intuitive.
