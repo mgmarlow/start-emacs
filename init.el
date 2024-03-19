@@ -186,6 +186,16 @@
   (completion-styles '(orderless basic))
   (completion-category-overrides '((file (styles basic partial-completion)))))
 
+;; Replace the default Emacs isearch with Consult, which offers a rich
+;; minibuffer results window and integration with Orderless.
+(use-package consult
+  :ensure t
+  :bind (("C-s" . consult-line)
+         :map minibuffer-local-map
+         ("C-r" . consult-history))
+  :custom
+  (completion-in-region-function #'consult-completion-in-region))
+
 ;; Where Vertico is a completion engine for your Emacs minibuffer,
 ;; Corfu is a completion engine for your source code.  This package
 ;; takes the data from things like LSP or Dabbrev and puts those
