@@ -36,6 +36,18 @@ always takes a little longer since Emacs must refresh it's package
 archive, download packages used in Start Emacs, and get everything
 initialized.
 
+## Next steps
+
+After cloning the project, booting up Emacs, and working through the
+[Emacs tutorial](https://www.gnu.org/software/emacs/tour/), read
+through the code in [init.el](./init.el) and learn what everything
+does. You can use `C-h o` to open up the built-in help docs to learn
+more about specific variables, functions, or macros.
+
+[Extending Start Emacs](./extending.md) offers a handful of recipes
+that explore other useful features, like Vim emulation or Common
+Lisp editing.
+
 ## Why Start Emacs?
 
 Start Emacs is a set of default settings and recommended packages
@@ -64,11 +76,6 @@ library, [treesit-auto](https://github.com/renzmann/treesit-auto),
 that prompts for grammar installation if one is available for the
 current buffer. This will kick in automatically for any programming
 language that treesit-auto recognizes.
-
-## Next steps
-
-Check out the [extending](./extending.md) guide for some suggested
-configurations, like Vim emulation.
 
 ## Kudos
 
