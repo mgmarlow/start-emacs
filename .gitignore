@@ -3,3 +3,4 @@
 !*.md
 !LICENSE
 !lisp/
+!lisp/*
