@@ -206,6 +206,19 @@
   (corfu-auto-delay 0.25)
   (corfu-auto-prefix 2))
 
+;; Enhance Corfu with additional completion functions so that it
+;; provides more suggestions. For example, `cape-dabbrev' looks
+;; at words in the current buffer as a source for completions.
+;; There are many more completion functions available than those
+;; listed, so it's worth reading through the Cape documentation
+;; to discover others that may be useful to your workflow.
+(use-package cape
+  :ensure t
+  :init
+  (add-to-list 'completion-at-point-functions #'cape-file)
+  (add-to-list 'completion-at-point-functions #'cape-dabbrev)
+  (add-to-list 'completion-at-point-functions #'cape-elisp-block))
+
 ;; Emacs includes Tree-sitter support as of version 29, but does not
 ;; bundle Tree-sitter grammars via the usual installation methods.
 ;; That means that if you want to use a Tree-sitter major mode, you
