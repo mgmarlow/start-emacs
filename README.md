@@ -61,6 +61,8 @@ primarily motivated with helping new users learn how to configure
 Emacs themselves. Doom is great, don't get me wrong, but learning
 how to configure Emacs from scratch will pay dividends.
 
+Here are some of the features of Start Emacs:
+
 ### Tree-sitter
 
 [Tree-sitter](https://tree-sitter.github.io/tree-sitter/) is a fancy
