@@ -53,12 +53,13 @@ Lisp editing.
 Start Emacs is a set of default settings and recommended packages
 paired with some extensive documentation to help new Emacs users get
 started with their own configuration. The goal is simplicity and
-readability while providing a strong first-time user experience.
+readability.
 
 In contrast to distributions like
 [Doom](https://github.com/doomemacs/doomemacs), Start Emacs is
 primarily motivated with helping new users learn how to configure
-Emacs themselves.
+Emacs themselves. Doom is great, don't get me wrong, but learning
+how to configure Emacs from scratch will pay dividends.
 
 ### Tree-sitter
 
