@@ -53,11 +53,44 @@ add [evil-escape](https://github.com/syl20bnr/evil-escape):
   (evil-escape-mode))
 ```
 
-## Org Mode note-taking
+## Writing prose
 
-[Denote](https://protesilaos.com/emacs/denote) is a feature-rich, yet
-simple package for note-taking that supports [Org
-Mode](https://orgmode.org/).
+### Markdown
+
+Look no further than
+[markdown-mode](https://jblevins.org/projects/markdown-mode/):
+
+```elisp
+(use-package markdown-mode
+  :ensure t
+  :mode ("README\\.md\\'" . gfm-mode)
+  :init (setq markdown-command "multimarkdown"))
+```
+
+### Note-taking and Org Mode
+
+[Org Mode](https://orgmode.org/) is one of the classic killer-features
+of Emacs, offering a markup format that is like Markdown on
+steroids. It's also built into Emacs so you don't need an extra
+package to start using it. You may, however, enjoy extending Org Mode
+with a few packages to make the experience a little nicer.
+
+One package that I recommend everyone to try out is [Org
+Modern](https://github.com/minad/org-modern), which cleans up the Org
+Mode UI with a fresher interface.
+
+```elisp
+(use-package org-modern
+  :ensure t
+  :after org
+  :config
+  (global-org-modern-mode))
+```
+
+For those who want a more structure to their note-taking experience,
+[Denote](https://protesilaos.com/emacs/denote) is one such
+Org-compatible package that handles your Org file naming schemes,
+organization, and linking.
 
 ```elisp
 (use-package denote
@@ -65,6 +98,7 @@ Mode](https://orgmode.org/).
   :config
   (setq denote-directory "~/path/to/notes/"))
 ```
+
 
 ## Common Lisp editing
 
