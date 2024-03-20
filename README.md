@@ -10,11 +10,11 @@ Emacs](https://www.gnu.org/software/emacs/) (version 29+ required).
 Then, run one of the following installation commands to clone Start
 Emacs into your Emacs configuration directory.
 
-> Note: the Start Emacs installation directory depends on your Emacs
-> value of `user-emacs-directory`, which may be different than the one
-> below. If you open up Emacs and don't see any changes after
-> following the install step, try invoking `M-: user-emacs-directory`
-> to discover where Start Emacs should be cloned.
+> [!Note]
+> Your installation directory is the `user-emacs-directory` variable
+> in Emacs. If you open up Emacs and don't see any changes after
+> cloning, try invoking `M-: user-emacs-directory` in Emacs to
+> discover the correct location.
 
 **Mac/Linux**:
 
@@ -79,6 +79,33 @@ library, [treesit-auto](https://github.com/renzmann/treesit-auto),
 that prompts for grammar installation if one is available for the
 current buffer. This will kick in automatically for any programming
 language that treesit-auto recognizes.
+
+### LSP
+
+> [!Note]
+> Start Emacs does not install the language servers required for Eglot
+> for you. Before using LSP, you must have your desired language
+> server installed and available in PATH.
+
+[Eglot](https://github.com/joaotavora/eglot) is a LSP client that
+ships with Emacs 29 and maintains a high-level of compatibility with
+other built-in Emacs packages. The configuration from Start Emacs
+plays nicely with the completion framework
+[Corfu](https://elpa.gnu.org/packages/corfu.html), which provides LSP
+suggestions directly in your Emacs buffer.
+
+### Searching and navigation improvements
+
+Start Emacs replaces the default Emacs navigation with a few tools
+that do the job (arguably)
+better. [Vertico](https://elpa.gnu.org/packages/vertico.html) and
+[Consult](https://elpa.gnu.org/packages/consult.html) do most of the
+heavy-lifting here, providing interactive completing-read suggestions
+when working in the minibuffer or searching
+buffers. [Orderless](https://elpa.gnu.org/packages/orderless.html)
+makes both of these tools better with space-delimited matching,
+meaning your query does not need to exactly match the buffer text to
+find results.
 
 ## Kudos
 
