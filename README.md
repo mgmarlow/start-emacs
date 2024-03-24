@@ -4,11 +4,17 @@ A starter project for your Emacs configuration in a single command.
 
 ## Install
 
-First, download the [latest version of
+**Install Emacs 29+**:
+
+* Download the [latest version of
 Emacs](https://www.gnu.org/software/emacs/) (version 29+ required).
 
-Then, run one of the following installation commands to clone Start
-Emacs into your Emacs configuration directory.
+**Install external dependencies**:
+
+* `gcc` (a C compiler is required for compiling  tree-sitter grammars)
+* `git`
+
+**Install Start Emacs**:
 
 > [!Note]
 > Your installation directory is the `user-emacs-directory` variable
