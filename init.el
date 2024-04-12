@@ -217,11 +217,11 @@
   (corfu-auto-prefix 2))
 
 ;; Enhance Corfu with additional completion functions so that it
-;; provides more suggestions. For example, `cape-dabbrev' looks
-;; at words in the current buffer as a source for completions.
-;; There are many more completion functions available than those
-;; listed, so it's worth reading through the Cape documentation
-;; to discover others that may be useful to your workflow.
+;; provides more suggestions.  For example, `cape-dabbrev' looks at
+;; words in the current buffer as a source for completions.  There are
+;; many more completion functions available than those listed, so it's
+;; worth reading through the Cape documentation to discover others
+;; that may be useful to your workflow.
 (use-package cape
   :ensure t
   :init
@@ -256,7 +256,7 @@
   ;;        (go-ts-mode . eglot-ensure))
   :bind (("C-c ." . eglot-code-action-quickfix)))
 
-;; Add breadcrumbs to the top of buffers.
+;; Add breadcrumbs to the top of buffers.  Works great with Eglot.
 (use-package breadcrumb
   :ensure t
   :config
@@ -264,8 +264,15 @@
 
 ;;; Custom lisp modules:
 
-;; Add `./lisp/' to the Emacs `load-path' so Emacs can find your
-;; custom Emacs Lisp code.
+;; This section is all yours.  With `lisp/' in your `load-path', you
+;; can drop any Emacs Lisp code into that directory and it will be
+;; available for use in Emacs.  This is a great place for custom
+;; packages, lengthy configurations, and other experimentations.  Many
+;; Emacs users also split out their init.el into separate modules, one
+;; for each category of configuration.
+;;
+;; Take a look at lisp/my-package-refresh.el for an example
+;; user-defined package.
 (add-to-list 'load-path (expand-file-name "lisp" user-emacs-directory))
 
 ;; Automatically refresh `package-archive-contents' at most once a
