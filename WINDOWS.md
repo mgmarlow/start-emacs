@@ -1,6 +1,6 @@
 # Windows guide
 
-Emacs on Windows can be a finnicky beast, no thanks in part to the
+Emacs on Windows can be a finicky beast, no thanks in part to the
 necessity of a C compiler to install tree-sitter grammars. There are a
 few different schools of thought for setting up a Windows dev
 environment that has the necessary tools. You can set up Visual Studio
