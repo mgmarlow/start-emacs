@@ -30,6 +30,10 @@ git clone https://github.com/mgmarlow/start-emacs.git "${XDG_CONFIG_HOME:-$HOME/
 
 **Windows (Powershell)**:
 
+> [!Note]
+> Windows users may prefer running Emacs via WSL, as outlined in
+> [WINDOWS.md](./WINDOWS.md).
+
 ```
 git clone https://github.com/mgmarlow/start-emacs.git $env:USERPROFILE\AppData\Roaming\.emacs.d\
 ```
@@ -50,7 +54,7 @@ through the code in [init.el](./init.el) and learn what everything
 does. You can use `C-h o` to open up the built-in help docs to learn
 more about specific variables, functions, or macros.
 
-[Extending Start Emacs](./extending.md) offers a handful of recipes
+[Extending Start Emacs](./EXTENDING.md) offers a handful of recipes
 that explore other useful features, like Vim emulation or Common
 Lisp editing.
 
