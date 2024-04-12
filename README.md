@@ -11,8 +11,8 @@ Emacs](https://www.gnu.org/software/emacs/) (version 29+ required).
 
 **Install external dependencies**:
 
-* `gcc` (a C compiler is required for compiling  tree-sitter grammars)
 * `git`
+* `gcc` (a C compiler is required for compiling  tree-sitter grammars)
 
 **Install Start Emacs**:
 
@@ -30,7 +30,7 @@ git clone https://github.com/mgmarlow/start-emacs.git "${XDG_CONFIG_HOME:-$HOME/
 
 **Windows (Powershell)**:
 
-> [!Note]
+> [!Warning]
 > Windows users may prefer running Emacs via WSL, as outlined in
 > [WINDOWS.md](./WINDOWS.md).
 
@@ -60,18 +60,26 @@ Lisp editing.
 
 ## Why Start Emacs?
 
-Start Emacs is a set of default settings and recommended packages
-paired with some extensive documentation to help new Emacs users get
-started with their own configuration. The goal is simplicity and
-readability.
+There's a lot of joy to be had from throwing together your own Emacs
+configuration, but it can be hard to get started. A lot of that
+initial difficulty comes from the obtuseness of Emacs when viewed as a
+modern text editor; it just doesn't pack the same default experience
+that you may be used to.
 
-In contrast to distributions like
-[Doom](https://github.com/doomemacs/doomemacs), Start Emacs is
-primarily motivated with helping new users learn how to configure
-Emacs themselves. Doom is great, don't get me wrong, but learning
-how to configure Emacs from scratch will pay dividends.
+The goal of Start Emacs is to set up some of those modern defaults
+with comments that explain what is being changed. It intentionally
+doesn't configure everything for you out-of-the-box, just the baseline
+features that might be expected from other editors like VS Code or
+Helix. Ultimately, your configuration should be your own and the
+comments are there to help you learn to be self-sufficient.
 
-Here are some of the features of Start Emacs:
+With Emacs 29 there's actually not that much configuration that you
+need (in my opinion) to have a great text editor, thanks in large part
+to the Emacs maintainers and ecosystem changes around LSP and
+tree-sitter. However, knowing what to change and how to do it comes
+with experience. Start Emacs can help bridge that gap.
+
+## Features
 
 ### Tree-sitter
 
@@ -91,11 +99,6 @@ current buffer. This will kick in automatically for any programming
 language that treesit-auto recognizes.
 
 ### LSP
-
-> [!Note]
-> Start Emacs does not install the language servers required for Eglot
-> for you. Before using LSP, you must have your desired language
-> server installed and available in PATH.
 
 [Eglot](https://github.com/joaotavora/eglot) is a LSP client that
 ships with Emacs 29 and maintains a high-level of compatibility with
