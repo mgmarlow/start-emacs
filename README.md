@@ -48,15 +48,35 @@ initialized.
 
 ## Next steps
 
-After cloning the project, booting up Emacs, and working through the
-[Emacs tutorial](https://www.gnu.org/software/emacs/tour/), read
-through the code in [init.el](./init.el) and learn what everything
-does. You can use `C-h o` to open up the built-in help docs to learn
-more about specific variables, functions, or macros.
+With Emacs running, the next step is to work your way through the
+tutorial. You can open it via the keybinding: `C-h t` (ctrl + h,
+followed by t). The tutorial will teach you all of the basic
+navigation tools that will help you when reading the Start Emacs
+configuration source in [init.el](./init.el).
 
-[Extending Start Emacs](./EXTENDING.md) offers a handful of recipes
-that explore other useful features, like Vim emulation or Common
-Lisp editing.
+> [!Note]
+> While you're reading Emacs Lisp, don't forget that you can highlight
+> any symbol and use `C-h o` to pull up the built-in help docs.
+
+When you're comfortable with the basic Start Emacs configuration,
+check out [EXTENDING.md](./EXTENDING.md) for a bunch of recipes that
+implement other useful Emacs features.
+
+If you want to version control your Emacs configuration ([like I
+do](https://github.com/mgmarlow/dotemacs)), you will want to replace
+the git artifacts from Start Emacs with your own. The simple way to do
+this is to blow away the `.git` folder and re-initialize:
+
+```sh
+cd my-emacs-directory/
+rm -rf .git/
+git init
+git commit -m "My new Emacs configuration"
+```
+
+You may also be interested in using a tool like [GNU
+Stow](https://www.gnu.org/software/stow/) if your dotfile needs are
+more complicated.
 
 ## Why Start Emacs?
 
