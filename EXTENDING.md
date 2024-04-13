@@ -2,6 +2,47 @@
 
 Some suggested recipes for extending Start Emacs.
 
+## Emacs server
+
+Emacs is rad and you will likely want to use it as your go-to editor
+for other programs like `git`. However, the bigger your Emacs
+configuration, the longer it will take to boot Emacs. When you live in
+a single Emacs session for most of your editing, long boot times don't
+really matter since you generally only launch once. But when you're
+launching Emacs from another program, that boot time can be very
+annoying.
+
+One solution is to launch an Emacs session into an existing Emacs
+process instead of creating a new one. A new buffer opens instantly
+with your requested file.
+
+To set this up, you need to configure [Emacs
+server](https://www.gnu.org/software/emacs/manual/html_node/emacs/Emacs-Server.html)
+in your Emacs configuration. The following will start an Emacs server
+on the first launch of Emacs (`server-running-p` protects us from
+starting multiple servers when launching multiple Emacs processes):
+
+```elisp
+(require 'server)
+
+(unless (server-running-p)
+  (server-start))
+```
+
+With the server running, you can use `emacsclient` at the command line
+to open files in the existing Emacs instance. Here's an example git
+configuration that sets this up:
+
+```
+[core]
+    editor = emacsclient
+```
+
+Now when you execute `git commit`, the commit message editor is opened
+in your existing Emacs instance. When you're done editing that commit
+message, use `C-x #` to tell Emacs that you want to restore your
+previous terminal session.
+
 ## Git UI
 
 [Magit](https://magit.vc/) is an absolute legend when it comes to Git
