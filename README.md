@@ -80,24 +80,28 @@ more complicated.
 
 ## Why Start Emacs?
 
-There's a lot of joy to be had from throwing together your own Emacs
-configuration, but it can be hard to get started. A lot of that
-initial difficulty comes from the obtuseness of Emacs when viewed as a
-modern text editor; it just doesn't pack the same default experience
-that you may be used to.
+Rolling your own Emacs configuration is a ton of fun, if a bit
+daunting. Along the way you encounter several difficulty spikes:
+learning the Emacs keybindings, navigating the configuration file and
+help system, and finally, learning Emacs Lisp. This project is meant
+to soften those difficulty spikes by bringing the default Emacs
+experience a little closer to other modern editors.
 
-The goal of Start Emacs is to set up some of those modern defaults
-with comments that explain what is being changed. It intentionally
-doesn't configure everything for you out-of-the-box, just the baseline
-features that might be expected from other editors like VS Code or
-Helix. Ultimately, your configuration should be your own and the
-comments are there to help you learn to be self-sufficient.
+Start Emacs is intentionally light. It tries not to assume too much
+about your preferred working environment, or deviate too far from the
+baseline Emacs experience. You'll need to learn how to hack your
+configuration yourself to finely tailor Emacs to your preferences.
 
-With Emacs 29 there's actually not that much configuration that you
-need (in my opinion) to have a great text editor, thanks in large part
-to the Emacs maintainers and ecosystem changes around LSP and
-tree-sitter. However, knowing what to change and how to do it comes
-with experience. Start Emacs can help bridge that gap.
+With that goal in mind, the configuration file provided by Start Emacs
+is heavily annotated with comments. These comments explain the
+reasoning behind a particular setting change and where you can learn
+more about that change if you want to tweak it yourself.
+
+Emacs improves with every release and Start Emacs is the product of
+all of the hard work of the Emacs maintainers and community. The 29
+release in particular added a ton of great features to Emacs that this
+project takes advantage of, like tree-sitter and built-in LSP. Now is
+a great time to get started with Emacs.
 
 ## Features
 
