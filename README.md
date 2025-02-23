@@ -1,31 +1,31 @@
 # Start Emacs
 
-A starter project for your Emacs configuration in a single command.
+A single-file starting point for your Emacs configuration.
 
 ## Install
 
-**Install Emacs 29+**:
+**Step one: install Emacs**:
 
 * Download the [latest version of
-Emacs](https://www.gnu.org/software/emacs/) (version 29+ required).
+Emacs](https://www.gnu.org/software/emacs/) (version >=29 required).
 
-**Install external dependencies**:
+**Step two: install external dependencies**:
 
 * `git`
 * `gcc` (a C compiler is required for compiling  tree-sitter grammars)
 
-**Install Start Emacs**:
+**Step three: clone Start Emacs**:
 
 > [!Note]
-> Your installation directory is the `user-emacs-directory` variable
-> in Emacs. If you open up Emacs and don't see any changes after
-> cloning, try invoking `M-: user-emacs-directory` in Emacs to
-> discover the correct location.
+> The proper installation directory for Start Emacs depends on your
+> Emacs settings, if you have previously launched Emacs (see: [How
+> Emacs Finds Your Init
+> File](https://www.gnu.org/software/emacs/manual/html_node/emacs/Find-Init.html)).
 
 **Mac/Linux**:
 
 ```sh
-git clone https://github.com/mgmarlow/start-emacs.git "${XDG_CONFIG_HOME:-$HOME/.config}"/emacs
+git clone https://github.com/mgmarlow/start-emacs.git ~/.emacs.d/
 ```
 
 **Windows (Powershell)**:
