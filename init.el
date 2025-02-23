@@ -270,15 +270,13 @@
 ;; packages, lengthy configurations, and other experimentations.  Many
 ;; Emacs users also split out their init.el into separate modules, one
 ;; for each category of configuration.
-;;
-;; Take a look at lisp/my-package-refresh.el for an example
-;; user-defined package.
 (add-to-list 'load-path (expand-file-name "lisp" user-emacs-directory))
 
-;; Automatically refresh `package-archive-contents' at most once a
-;; week when calling `package-install'.
-(use-package my-package-refresh
-  :config
-  (setq my-package-automatic-refresh-threshold (* 7 24)))
+;; When you want to write your own custom modules, create a new file
+;; in lisp/, e.g. "lisp/my-custom-module.el".  Use "M-x auto-insert"
+;; to fill that module with the prerequisite boilerplate.  Write your
+;; module code, then require it here:
+;;
+;; (require 'my-custom-module)
 
 ;;; init.el ends here

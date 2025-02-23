@@ -145,4 +145,3 @@ find results.
 - [kickstart.nvim](https://github.com/nvim-lua/kickstart.nvim)
 - [Crafted Emacs](https://github.com/SystemCrafters/crafted-emacs)
 - [Technomancy's Better Defaults](https://git.sr.ht/~technomancy/better-defaults)
-- [Andrey Listopadov's Blog](https://andreyor.st/posts/2022-07-15-refresh-package-contents-automatically/)
