@@ -31,8 +31,8 @@ git clone https://github.com/mgmarlow/start-emacs.git ~/.emacs.d/
 **Windows (Powershell)**:
 
 > [!Warning]
-> Windows users may prefer running Emacs via WSL, as outlined in
-> [WINDOWS.md](./WINDOWS.md).
+> Windows users may prefer running Emacs via WSL, as outlined in the
+> [Windows Guide](https://github.com/mgmarlow/start-emacs/wiki/Windows-Guide).
 
 ```
 git clone https://github.com/mgmarlow/start-emacs.git $env:USERPROFILE\AppData\Roaming\.emacs.d\
