@@ -6,13 +6,13 @@ A single-file starting point for your Emacs configuration.
 
 **Step one: install Emacs**:
 
-* Download the [latest version of
-Emacs](https://www.gnu.org/software/emacs/) (version >=29 required).
+- Download the [latest version of
+  Emacs](https://www.gnu.org/software/emacs/) (version >=29 required).
 
 **Step two: install external dependencies**:
 
-* `git`
-* `gcc` (a C compiler is required for compiling  tree-sitter grammars)
+- `git`
+- `gcc` (a C compiler is required for compiling tree-sitter grammars)
 
 **Step three: clone Start Emacs**:
 
@@ -59,8 +59,13 @@ configuration source in [init.el](./init.el).
 > any symbol and use `C-h o` to pull up the built-in help docs.
 
 When you're comfortable with the basic Start Emacs configuration,
-check out [EXTENDING.md](./EXTENDING.md) for a bunch of recipes that
-implement other useful Emacs features.
+check out [Extending Start
+Emacs](https://github.com/mgmarlow/start-emacs/wiki/Extending-Start-Emacs)
+for recipes that implement other useful Emacs features.
+
+The [Start Emacs Wiki](https://github.com/mgmarlow/start-emacs/wiki)
+is a good place to go for information on other topics, like
+modularizing your configuration.
 
 If you want to version control your Emacs configuration ([like I
 do](https://github.com/mgmarlow/dotemacs)), you will want to replace
